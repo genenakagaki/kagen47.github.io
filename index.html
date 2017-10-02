@@ -138,10 +138,11 @@
               generatedCode = generatedCode.replace(specifier, args[i]);
             }
 
-            $('#copy').attr("data-clipboard-text", generatedCode);
             $('#generatedCode').append(generatedCode);
           }
         });
+
+        $('#copy').attr("data-clipboard-text", generatedCode);
 
         // prevent page refresh
         return false;
