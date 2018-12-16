@@ -4,7 +4,7 @@ var shapeModelList = [
     // MMM
     "width" : 3,
     "height": 2,
-    "color" : "#FF8888",
+    "color" : "#FF0000",
     "xBlockList": [
       [1, 0, 1, 2], // up
       [0, 0, 1, 0], // right
@@ -23,7 +23,7 @@ var shapeModelList = [
     // MM
     "width" : 2,
     "height": 2,
-    "color" : "#88FF88",
+    "color" : "#00FF00",
     "xBlockList": [
       [0, 1, 0, 1],
       [0, 1, 0, 1],
@@ -44,7 +44,7 @@ var shapeModelList = [
     // M
     "width" : 1,
     "height": 4,
-    "color" : "#8888FF",
+    "color" : "#0000FF",
     "xBlockList": [
       [0, 0, 0, 0], // up
       [0, 1, 2, 3], // right
@@ -63,7 +63,7 @@ var shapeModelList = [
     // MMM
     "width" : 3,
     "height": 2,
-    "color" : "#FFFF88",
+    "color" : "#FFFF00",
     "xBlockList": [
       [0, 0, 1, 2], // up
       [0, 1, 0, 0], // right
@@ -82,7 +82,7 @@ var shapeModelList = [
     // MMM
     "width" : 3,
     "height": 2,
-    "color" : "#88FFFF",
+    "color" : "#00FFFF",
     "xBlockList": [
       [2, 0, 1, 2], // up
       [0, 0, 0, 1], // right
@@ -101,7 +101,7 @@ var shapeModelList = [
     // MM
     "width" : 3,
     "height": 2,
-    "color" : "#FF88FF",
+    "color" : "#FF00FF",
     "xBlockList": [
       [1, 2, 0, 1], // up
       [0, 0, 1, 1], // right
