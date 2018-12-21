@@ -154,12 +154,14 @@
             selectedCard.style.top = startingValues.offsetTop + 'px';
 
             // Animate
+            var width = window.innerWidth - window.innerWidth * .2;
+            var height = window.innerHeight - window.innerHeight * .2
             selectedCardAnime = anime({
               targets: '.card.selected',
-              left: window.innerWidth - window.innerWidth * .9,
-              top: window.innerHeight - window.innerHeight * .9,
-              width: window.innerWidth - window.innerWidth * .2,
-              height: window.innerHeight - window.innerHeight * .2,
+              left: (window.innerWidth - width) / 2,
+              top: (window.innerHeight - height) / 2,
+              width: width,
+              height: height,
               duration: 300,
               easing: 'easeOutQuad'
             });
