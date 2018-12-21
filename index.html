@@ -3,13 +3,14 @@
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
+    crossorigin="anonymous" />
 
+  <link rel="stylesheet" href="./css/index.css" />
   <title>Gene Nakagaki</title>
 </head>
 
@@ -21,23 +22,92 @@
 
   <section id="projects">
     <div class="container">
+      <h2>Web Projects</h2>
       <div class="row">
 
         <div class="col-md-4">
-          <div class="projectCard">
-            <h4>Sumitomo NY Real Estate Sales</h4>
-            <ul>
-              <li>C#</li>
-              <li>ASP.NET MVC 5</li>
-              <li>Entity Framework</li>
-              <li>SQL Server</li>
-            </ul>
-            <ul>
-              <li>JavaScript, HTML5, CSS3</li>
-              <li>jQuery</li>
-              <li>Bootstrap</li>
-              <li>Google Maps JavaScript API</li>
-            </ul>
+          <div class="card">
+            <div class="overlay">
+              <h4 class="text">Sumitomo NY Real Estate Sales</h4>
+            </div>
+
+            <div class="cardContent">
+              <div class="card-img-top" style="background-image: url(./img/sumitomo-ny.png)">
+              </div>
+
+              <div class="card-body">
+                <ul>
+                  <li>C#</li>
+                  <li>ASP.NET MVC 5</li>
+                  <li>Entity Framework</li>
+                  <li>SQL Server</li>
+                </ul>
+                <ul>
+                  <li>JavaScript, HTML5, CSS3</li>
+                  <li>jQuery</li>
+                  <li>Bootstrap</li>
+                  <li>Google Maps JavaScript API</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="overlay">
+              <h4 class="text">Sumitomo NY Real Estate Sales</h4>
+            </div>
+
+            <div class="cardContent">
+              <div class="card-img-top test">
+                <img class="img-fluid" src="./img/sumitomo-ny.png" alt="Sumitomo NY Real Estate Sales" />
+              </div>
+
+              <div class="card-body">
+                <ul>
+                  <li>C#</li>
+                  <li>ASP.NET MVC 5</li>
+                  <li>Entity Framework</li>
+                  <li>SQL Server</li>
+                </ul>
+                <ul>
+                  <li>JavaScript, HTML5, CSS3</li>
+                  <li>jQuery</li>
+                  <li>Bootstrap</li>
+                  <li>Google Maps JavaScript API</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="overlay">
+              <h4 class="text">Sumitomo NY Real Estate Sales</h4>
+            </div>
+
+            <div class="cardContent">
+              <div class="card-img-top test">
+                <img class="img-fluid" src="./img/sumitomo-ny.png" alt="Sumitomo NY Real Estate Sales" />
+              </div>
+
+              <div class="card-body">
+                <ul>
+                  <li>C#</li>
+                  <li>ASP.NET MVC 5</li>
+                  <li>Entity Framework</li>
+                  <li>SQL Server</li>
+                </ul>
+                <ul>
+                  <li>JavaScript, HTML5, CSS3</li>
+                  <li>jQuery</li>
+                  <li>Bootstrap</li>
+                  <li>Google Maps JavaScript API</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -53,6 +123,72 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+
+  <script src="./js/anime.min.js"></script>
+
+  <script>
+    var animations = [];
+
+    var selectedCardAnime;
+    var startingValues = {
+      "width": undefined,
+      "offsetTop": undefined
+    };
+
+    document.documentElement.addEventListener('click', function (e) {
+      var classList = e.target.classList;
+      var selectedCard = document.querySelector('.card.selected');
+      console.log(selectedCardAnime);
+
+      if (selectedCardAnime == undefined || selectedCardAnime.progress === 0 || selectedCardAnime.progress === 100) {
+        if (selectedCard == undefined || selectedCard == null) {
+          if (classList.contains('card')) {
+            selectedCard = e.target;
+
+            // Adjust size and position
+            startingValues.width = selectedCard.offsetWidth;
+            startingValues.offsetTop = selectedCard.getBoundingClientRect().top - document.documentElement.offsetTop;
+            selectedCard.classList.add('selected');
+            selectedCard.style.width = startingValues.width + 'px';
+            selectedCard.style.left = selectedCard.offsetLeft + 'px';
+            selectedCard.style.top = startingValues.offsetTop + 'px';
+
+            // Animate
+            selectedCardAnime = anime({
+              targets: '.card.selected',
+              left: window.innerWidth - window.innerWidth * .9,
+              top: window.innerHeight - window.innerHeight * .9,
+              width: window.innerWidth - window.innerWidth * .2,
+              height: window.innerHeight - window.innerHeight * .2,
+              duration: 300,
+              easing: 'easeOutQuad'
+            });
+            document.documentElement.style.overflow = 'hidden';
+            anime({
+              targets: '.card.selected .card-img-top',
+              height: (window.innerHeight - window.innerHeight * .2) / 2,
+              duration: 300
+            });
+            selectedCardAnime.play();
+          }
+        } else {
+          if (selectedCard !== e.target) {
+            selectedCardAnime.update = function (anim) {
+              if (anim.progress === 0) {
+                console.log("finished");
+                selectedCard.classList.remove('selected');
+                selectedCard.style.left = 'auto';
+                selectedCard.style.top = 'auto';
+                document.documentElement.style.overflow = 'scroll';
+              }
+            };
+            selectedCardAnime.reverse();
+            selectedCardAnime.play();
+          }
+        }
+      }
+    })
+  </script>
 </body>
 
 </html>
