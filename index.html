@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous" />
   <!-- Slick -->
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./css/slick.css" />
 
   <link rel="stylesheet" href="./css/index.css" />
   <title>Gene Nakagaki</title>
@@ -34,9 +34,15 @@
             </button>
             <!-- <div class="overlay">
             </div> -->
-            <div class="card-img-top" style="background-image: url(./img/sumitomo-ny.png)">
+            <div class="card-img-top">
+              <!--style="background-image: url(./img/sumitomo-ny.png)">-->
             </div>
 
+            <div class="slider" style="height: 300px">
+              <div><img class="img-fluid" src="./img/sumitomo-ny.png"></div>
+              <div><img class="img-fluid" src="./img/sumitomo-phone.png"></div>
+              <div><img class="img-fluid" src="./img/sumitomo-tablet.png"></div>
+            </div>
             <div class="card-body">
               <h5 class="card-title">Sumitomo NY Real Estate Sales</h5>
               <ul class="technology">
@@ -136,11 +142,21 @@
     crossorigin="anonymous"></script>
 
   <!-- Slick -->
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
 
   <script src="./js/anime.min.js"></script>
 
   <script>
+    //Carousel
+    $('.slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true
+    });
+
     var animations = [];
 
     var activeCardAnime;
@@ -199,13 +215,13 @@
       } else {
         console.log("A card is active");
         if ($target.hasClass('close')) {
-          console.log("Clicked outside of active card");
+          console.log("clickd on the close button");
           activeCardAnime.update = function (anim) {
             if (anim.progress === 0) {
-              $activeCard.find('.technology').css('height', 'auto');
               $activeCard.css('left', 'auto');
               $activeCard.css('top', '0');
               $activeCard.css('width', 'auto');
+              $activeCard.css('height', 'auto');
               $activeCard.removeClass('active');
               $(document.documentElement).css('overflow-y', 'scroll');
             }

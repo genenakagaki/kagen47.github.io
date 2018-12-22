@@ -68,11 +68,7 @@ img {
 
 .card .details {
     display: none;
-}
-
-.card .details ul {
-    position: relative;
-    left: 40px;
+    overflow-y: scroll;
 }
 
 .card.active .details {
@@ -99,6 +95,7 @@ img {
     top: -5px;
     font-size: 40px;
     color: white;
+    pointer-events: none;
 }
 
 #projects .card .close:hover {
@@ -109,7 +106,6 @@ img {
 .card.active .close {
     display: block;
 }
-
 
 .overlay {
     position: absolute;
@@ -124,4 +120,8 @@ img {
     transform: translate(0, -50%);
     color: white;
     text-align: center;
+}
+
+.clear {
+    clear: both;
 }
