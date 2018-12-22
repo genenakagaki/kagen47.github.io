@@ -9,6 +9,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous" />
+  <!-- Slick -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
   <link rel="stylesheet" href="./css/index.css" />
   <title>Gene Nakagaki</title>
@@ -16,7 +18,7 @@
 
 <body>
   <section id="intro">
-    <h1>Gene Nakagaki</h1>
+    <!-- <h1>Gene Nakagaki</h1> -->
 
   </section>
 
@@ -25,14 +27,56 @@
       <h2>Web Projects</h2>
       <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card">
+            <button type="button" class="close">
+              <span>&times;</span>
+            </button>
+            <!-- <div class="overlay">
+            </div> -->
+            <div class="card-img-top" style="background-image: url(./img/sumitomo-ny.png)">
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Sumitomo NY Real Estate Sales</h5>
+              <ul class="technology">
+                <li>ASP.NET MVC 5</li>
+                <li>Entity Framework</li>
+                <li>SQL Server</li>
+                <li>JavaScript, HTML5, CSS3</li>
+                <li>jQuery</li>
+                <li>Bootstrap</li>
+                <li>Google Maps JavaScript API</li>
+              </ul>
+
+              <div class="details">
+                <p>
+                  A multilingual real estate web application built using the ASP.NET MVC5 framework. This was created
+                  and managed by a small team using Git as the version control system.
+                </p>
+                <ul>
+                  <li>Designed the SQL Server Database to store data for Listings and Agents</li>
+                  <li>Created a C# Library that imports data from Multiple Listing Service (MLS), maps it to the
+                    database entity object, and then stores it to the database using the Entity Framework</li>
+                  <li>Created responsive web pages using Bootstrap</li>
+                  <li>Created dynamic pages that gets data from the database asynchronously using jQuery</li>
+                  <li>Added support for other languages</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
           <div class="card">
             <div class="overlay">
-              <h4 class="text">Sumitomo NY Real Estate Sales</h4>
+              <h4 class="text">Sumitomo NY Real Estate Sale</h4>
             </div>
 
             <div class="cardContent">
-              <div class="card-img-top" style="background-image: url(./img/sumitomo-ny.png)">
+              <div class="card-img-top">
+                <img class="img-fluid" src="./img/sumitomo-ny.png" alt="Sumitomo NY Real Estate Sales" />
               </div>
 
               <div class="card-body">
@@ -41,8 +85,6 @@
                   <li>ASP.NET MVC 5</li>
                   <li>Entity Framework</li>
                   <li>SQL Server</li>
-                </ul>
-                <ul>
                   <li>JavaScript, HTML5, CSS3</li>
                   <li>jQuery</li>
                   <li>Bootstrap</li>
@@ -53,7 +95,7 @@
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
           <div class="card">
             <div class="overlay">
               <h4 class="text">Sumitomo NY Real Estate Sales</h4>
@@ -70,37 +112,6 @@
                   <li>ASP.NET MVC 5</li>
                   <li>Entity Framework</li>
                   <li>SQL Server</li>
-                </ul>
-                <ul>
-                  <li>JavaScript, HTML5, CSS3</li>
-                  <li>jQuery</li>
-                  <li>Bootstrap</li>
-                  <li>Google Maps JavaScript API</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card">
-            <div class="overlay">
-              <h4 class="text">Sumitomo NY Real Estate Sales</h4>
-            </div>
-
-            <div class="cardContent">
-              <div class="card-img-top test">
-                <img class="img-fluid" src="./img/sumitomo-ny.png" alt="Sumitomo NY Real Estate Sales" />
-              </div>
-
-              <div class="card-body">
-                <ul>
-                  <li>C#</li>
-                  <li>ASP.NET MVC 5</li>
-                  <li>Entity Framework</li>
-                  <li>SQL Server</li>
-                </ul>
-                <ul>
                   <li>JavaScript, HTML5, CSS3</li>
                   <li>jQuery</li>
                   <li>Bootstrap</li>
@@ -124,69 +135,85 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
 
+  <!-- Slick -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
   <script src="./js/anime.min.js"></script>
 
   <script>
     var animations = [];
 
-    var selectedCardAnime;
-    var startingValues = {
-      "width": undefined,
-      "offsetTop": undefined
-    };
+    var activeCardAnime;
+    var activeCardImgAnime;
 
-    document.documentElement.addEventListener('click', function (e) {
-      var classList = e.target.classList;
-      var selectedCard = document.querySelector('.card.selected');
-      console.log(selectedCardAnime);
+    $(document).click(function (e) {
+      // Prevent right click
+      if (e.button != 0) return true;
 
-      if (selectedCardAnime == undefined || selectedCardAnime.progress === 0 || selectedCardAnime.progress === 100) {
-        if (selectedCard == undefined || selectedCard == null) {
-          if (classList.contains('card')) {
-            selectedCard = e.target;
+      var $target = $(e.target);
+      var $activeCard = $('.card.active');
+      console.log($target);
 
-            // Adjust size and position
-            startingValues.width = selectedCard.offsetWidth;
-            startingValues.offsetTop = selectedCard.getBoundingClientRect().top - document.documentElement.offsetTop;
-            selectedCard.classList.add('selected');
-            selectedCard.style.width = startingValues.width + 'px';
-            selectedCard.style.left = selectedCard.offsetLeft + 'px';
-            selectedCard.style.top = startingValues.offsetTop + 'px';
+      if (activeCardAnime !== undefined && activeCardAnime.progress > 0 && activeCardAnime.progress < 100) {
+        console.log("Prevent click while animating");
+        return;
+      }
 
-            // Animate
-            var width = window.innerWidth - window.innerWidth * .2;
-            var height = window.innerHeight - window.innerHeight * .2
-            selectedCardAnime = anime({
-              targets: '.card.selected',
-              left: (window.innerWidth - width) / 2,
-              top: (window.innerHeight - height) / 2,
-              width: width,
-              height: height,
-              duration: 300,
-              easing: 'easeOutQuad'
-            });
-            document.documentElement.style.overflow = 'hidden';
-            anime({
-              targets: '.card.selected .card-img-top',
-              height: (window.innerHeight - window.innerHeight * .2) / 2,
-              duration: 300
-            });
-            selectedCardAnime.play();
-          }
-        } else {
-          if (selectedCard !== e.target) {
-            selectedCardAnime.update = function (anim) {
-              if (anim.progress === 0) {
-                console.log("finished");
-                selectedCard.classList.remove('selected');
-                selectedCard.style.left = 'auto';
-                selectedCard.style.top = 'auto';
-                document.documentElement.style.overflow = 'scroll';
-              }
-            };
-            selectedCardAnime.reverse();
-            selectedCardAnime.play();
-          }
+      if ($activeCard.length == 0) {
+        console.log('No active cards');
+        if ($target.hasClass('card')) {
+          console.log('clicked on a card');
+          $activeCard = $target;
+
+          // Adjust size and position
+          startingWidth = $activeCard.outerWidth();
+          startingOffsetTop = $activeCard[0].getBoundingClientRect().top;
+          $activeCard.addClass('active');
+          $activeCard.css('width', startingWidth + 'px');
+          $activeCard.css('left', $activeCard.offset().left + 'px');
+          $activeCard.css('top', startingOffsetTop + 'px');
+
+          // Animate
+          var windowWidth = window.innerWidth;
+          var windowHeight = $(window).innerHeight();
+          var width = windowWidth;
+          var height = windowHeight;
+          activeCardAnime = anime({
+            targets: '.card.active',
+            left: 0,
+            top: 0,
+            width: width - 2, // minus the card border
+            height: height,
+            duration: 300,
+            easing: 'easeOutQuad'
+          });
+          $(document.documentElement).css('overflow-y', 'hidden');
+          activeCardImgAnime = anime({
+            targets: '.card.active .card-img-top',
+            height: height / 2,
+            padding: '0',
+            duration: 300
+          });
+          activeCardAnime.play();
+        }
+      } else {
+        console.log("A card is active");
+        if ($target.hasClass('close')) {
+          console.log("Clicked outside of active card");
+          activeCardAnime.update = function (anim) {
+            if (anim.progress === 0) {
+              $activeCard.find('.technology').css('height', 'auto');
+              $activeCard.css('left', 'auto');
+              $activeCard.css('top', '0');
+              $activeCard.css('width', 'auto');
+              $activeCard.removeClass('active');
+              $(document.documentElement).css('overflow-y', 'scroll');
+            }
+          };
+          activeCardAnime.reverse();
+          activeCardAnime.play();
+          activeCardImgAnime.reverse();
+          activeCardImgAnime.play();
         }
       }
     })

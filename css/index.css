@@ -1,5 +1,6 @@
 body {
     height: 2000px;
+    background-color: #e5e5e5;
 }
 
 img {
@@ -10,13 +11,14 @@ img {
     user-select: none;
 }
 
+/*#########
+   .card
+#########*/
 .card {
-    height: 300px;
     -webkit-transition: box-shadow .2s;
     /* Safari */
-    /* transition: box-shadow .2s, width .2s, height .2s; */
+    transition: box-shadow .2s;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 1), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
-    border: none;
 }
 
 .card>* {
@@ -25,14 +27,26 @@ img {
 
 .card:hover {
     box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 1), 0 1px 6px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .12);
+    cursor: pointer;
 }
 
-.card.selected {
+/*################
+   .card.active
+################*/
+.card.active {
     position: fixed;
     z-index: 10;
     /* height: 80vh;
     width: 80vw; */
     box-shadow: 0 2px 26px -1px rgba(0, 0, 0, 1), 0 1px 26px 0 rgba(0, 0, 0, .14), 0 1px 28px 0 rgba(0, 0, 0, .12);
+}
+
+.card.active>* {
+    pointer-events: auto;
+}
+
+.card.active:hover {
+    cursor: unset;
 }
 
 .card-img-top {
@@ -42,6 +56,60 @@ img {
     background-position: center center;
     padding: 37.5% 50%;
 }
+
+.card .technology {
+    float: left;
+    margin-right: 20px;
+}
+
+.card.active .technology {
+    height: 100%;   
+}
+
+.card .details {
+    display: none;
+}
+
+.card .details ul {
+    position: relative;
+    left: 40px;
+}
+
+.card.active .details {
+    display: block;
+}
+
+/*################
+   .card .close
+################*/
+.card .close {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 0;
+    background-color: black;
+    padding: 0 0 20px 20px;
+    opacity: 0.6;
+    border-radius: 0 0 0 100px;
+}
+
+.card .close span {
+    position: relative;
+    top: -5px;
+    font-size: 40px;
+    color: white;
+}
+
+#projects .card .close:hover {
+    color: white;
+    opacity: 1;
+}
+
+.card.active .close {
+    display: block;
+}
+
 
 .overlay {
     position: absolute;
@@ -57,7 +125,3 @@ img {
     color: white;
     text-align: center;
 }
-
-/* .overlay:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-} */
