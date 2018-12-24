@@ -19,6 +19,7 @@ img {
     /* Safari */
     transition: box-shadow .2s;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 1), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    margin-bottom: 10px;
 }
 
 .card>* {
@@ -36,21 +37,38 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    padding: 37.5% 0;
+    padding: 33.33% 0;
 }
 
 .card-body {
     height: 50%;
 }
 
+.card.active .card-body {
+    overflow-y: scroll;
+}
+
 .card-body .details {
     display: none;
-    height: 100%;
-    overflow-y: scroll;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.card-body .details .technology {
+    margin-bottom: 20px;
 }
 
 .card.active .card-body .details {
     display: flex;
+}
+
+.card-body .card-hidden {
+    display: none;
+}
+
+.card.active .card-body .card-hidden {
+    display: inline-block;
 }
 
 /*################
@@ -104,9 +122,9 @@ img {
     display: block;
 }
 
-/*################
+/*#################
    slick carousel
-################*/
+#################*/
 .carousel {
     position: absolute;
     top: 0;
@@ -121,25 +139,35 @@ img {
     height: 100%;
 }
 
+.slick-slide {
+    position: relative;
+}
+
 .carousel .slick-slide img {
+    display: block;
+    position: absolute;
+    top: 50%;
+
     margin: 0 auto;
-    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     opacity: 0.5;
-    -ms-transform: scale(0.6, 0.6);
+    -ms-transform: scale(0.6, 0.6) translateY(-50%);
     /* IE 9 */
-    -webkit-transform: scale(0.6, 0.6);
+    -webkit-transform: scale(0.6, 0.6) translateY(-50%);
+
     /* Safari */
-    transform: scale(0.6, 0.6);
+    transform: scale(0.6, 0.6) translateY(-50%);
     transition: all 0.3s; 
 }
 
 .carousel .slick-center.slick-slide img {
     opacity: 1;
-    -ms-transform: scale(1, 1);
+    -ms-transform: scale(1, 1) translateY(-50%);
     /* IE 9 */
-    -webkit-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1) translateY(-50%);
     /* Safari */
-    transform: scale(1, 1);
+    transform: scale(1, 1) translateY(-50%);
 }
 
 .overlay {

@@ -1,2 +1,1 @@
-# Utils
-# Utils
+Use 3:2 aspect ratio for images.
