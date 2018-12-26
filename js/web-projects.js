@@ -1,4 +1,4 @@
-var projects = [{
+var webProjects = [{
     "title": "sumitomo-ny.com",
     "subtitle": "Real Estate Web App - October 2018",
     "imgs": [
@@ -21,7 +21,7 @@ var projects = [{
     "buttons": [
         "<a class='btn btn-outline-primary' href='https://www.sumitomo-ny.com' target='_blank'><i class='fas fa-external-link-alt'></i> VIEW SITE</a>"
     ],
-    "description": "A multilingual real estate web application which users can search for the listings that they want using the filters and the custom map. There are also a lot of resources for the users like area guides, a guide for buying a property, and the guide for different styles of properties.",
+    "description": "A responsive, multilingual real estate web application which users can search for the listings that they want using the filters and the custom map. There are also a lot of resources for the users like area guides, a guide for buying a property, and the guide for different styles of properties.",
     "details": [
         "Designed the SQL Server Database to store data for Listings and Agents.",
         "Created a C# Library that imports data from Multiple Listing Service (MLS), maps it to the database entity object, and then stores it to the database using the Entity Framework.",
@@ -110,6 +110,60 @@ var projects = [{
         "Maintained the web app by making small UI updates.",
         "Updated the top page UI design and made it responsive.",
         "Added California MLS listings."
+    ]
+},
+{
+    "title": "yt-design.com",
+    "subtitle": "Design Showcase Web App - January 2017",
+    "imgs": [
+        "yt-1.jpg",
+        "yt-2.jpg",
+        "yt-3.jpg",
+        "yt-4.jpg"
+    ],
+    "technologies": [
+        "ASP.NET Web Forms",
+        "SQL Server",
+        "Entity Framework",
+        "Javascript, HTML5, CSS3",
+        "jQuery",
+        "Bootstrap",
+        "Team Foundation Server"
+    ],
+    "buttons": [
+        "<a class='btn btn-outline-primary' href='https://www.yt-design.com' target='_blank'><i class='fas fa-external-link-alt'></i> VIEW SITE</a>"
+    ],
+    "description": "A responsive, multilingual interior design showcase web app. The website contains many photos of the past design work and also details of the service the company offers.",
+    "details": [
+        "Designed the SQL Server database to store the company news information",
+        "Created a responsive web app using the ASP.NET Web Forms for the backend, Bootstrap and jQuery for the front-end.",
+        "Displayed images using asynchronous calls to prevent website stall."
+    ]
+},
+{
+    "title": "CMS for yt-design.com",
+    "subtitle": "CMS Web App - January 2017",
+    "imgs": [
+        "yt-cms-1.jpg",
+        "yt-cms-2.jpg",
+        "yt-cms-3.jpg"
+    ],
+    "technologies": [
+        "ASP.NET Web Forms",
+        "SQL Server",
+        "Entity Framework",
+        "Javascript, HTML5, CSS3",
+        "jQuery",
+        "Bootstrap",
+        "Team Foundation Server"
+    ],
+    "buttons": [
+    ],
+    "description": "A CMS web app for managing the projects in the website yt-design.com. Users can add new projects and select images to be shown on the website.",
+    "details": [
+        "Designed the SQL Server database to store the project data.",
+        "Created the web app using the ASP.NET Web Forms for the backend, Bootstrap and jQuery for the front-end.",
+        "Used jQueryUI to allow rearranging of the images and the projects."
     ]
 }
 ]
