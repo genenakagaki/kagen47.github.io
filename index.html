@@ -92,27 +92,29 @@
     for (var i = 0; i < projects.length; i++) {
       var p = projects[i];
       
-      // Image
+      // Image carousel
       var imgs = "";
       for (var j = 0; j < p.imgs.length; j++) {
-        imgs += "<div>";
-        imgs += "<img class='img-fluid' src='./img/" + p.imgs[j] + "'>";
-        imgs += "</div>";
+        imgs += "<div><img class='img-fluid' src='./img/" + p.imgs[j] + "'></div>";
+      }
+
+      // Technologies list
+      var technologies = "";
+      for (var j = 0; j < p.technologies.length; j++) {
+        technologies += "<li>"+ p.technologies[j] +"</li>"
       }
 
       // Details list
       var details = "";
       for (var j = 0; j < p.details.length; j++) {
-        details += "<li>";
-        details += p.details[j];
-        details += "</li>";
+        details += "<li>" + p.details[j] + "</li>";
       }
 
       projectsHtml += template.replace("@title", p.title)
         .replace("@subtitle", p.subtitle)
         .replace("@imgThumb", p.imgs[0])
         .replace("@imgs", imgs)
-        .replace("@technologies", p.technologies)
+        .replace("@technologies", technologies)
         .replace("@buttons", p.buttons)
         .replace("@description", p.description)
         .replace("@details", details);
@@ -125,7 +127,7 @@
       centerPadding: '25%',
       slidesToShow: 1,
       responsive: [{
-          breakpoint: 768,
+          breakpoint: 1100,
           settings: {
             centerMode: true,
             centerPadding: '0',
@@ -175,7 +177,7 @@
           $activeCard.css('left', $activeCard.offset().left + 'px');
           $activeCard.css('top', startingOffsetTop + 'px');
 
-          // Animate
+          // Animate card
           var windowWidth = window.innerWidth;
           var windowHeight = $(window).innerHeight();
           var width = windowWidth;
@@ -187,13 +189,22 @@
             width: width - 2, // minus the card border
             height: height,
             duration: 300,
-            easing: 'easeOutQuad'
+            easing: 'easeOutQuad',
+            complete: function(anim) {
+              $activeCard.css('width', '100%');
+            }
           });
-          console.log(height);
-          $(document.documentElement).css('overflow-y', 'hidden');
+          activeCardAnime.play();
+          
+          // Animate for image container
+          var imageHeight = height / 2;
+          if (width < imageHeight * 3/2) {
+            // if height is too small
+            imageHeight = width * 2 / 3;
+          }
           activeCardImgAnime = anime({
             targets: '.card.active .card-img-top',
-            height: height / 2,
+            height: imageHeight,
             padding: '0',
             duration: 300,
             complete: function (anim) {
@@ -201,8 +212,9 @@
               $activeCard.find('.overlay').addClass('show');
             }
           });
-          activeCardAnime.play();
           activeCardImgAnime.play();
+
+          $(document.documentElement).css('overflow-y', 'hidden');
         }
       } else {
         console.log("A card is active");
