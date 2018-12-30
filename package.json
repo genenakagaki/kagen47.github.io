@@ -1,0 +1,23 @@
+{
+  "name": "kagen47.github.io",
+  "version": "1.0.0",
+  "description": "Use 3:2 aspect ratio for images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kagen47/kagen47.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kagen47/kagen47.github.io/issues"
+  },
+  "homepage": "https://github.com/kagen47/kagen47.github.io#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
