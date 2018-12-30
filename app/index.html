@@ -18,7 +18,9 @@
     crossorigin="anonymous">
 
   <link href="https://fonts.googleapis.com/css?family=Arsenal|Averia+Sans+Libre" rel="stylesheet">
-  <link rel="stylesheet" href="./css/index.css" />
+  <!-- <link rel="stylesheet" href="./css/index.css" /> -->
+  <link rel="stylesheet" href="./css/common.css"/>
+  <link rel="stylesheet" href="./css/style.css"/>
   <title>Gene Nakagaki</title>
 
 
@@ -29,29 +31,20 @@
     <div class="overlay">
       <div class="text">
         <h1>Hi, I'm Gene!</h1>
-        <p>I develop apps :D</p>
+        <h3>I develop apps :D</h3>
         <a class="btn btn-outline-light" href="#linkWeb">Web</a>
         <a class="btn btn-outline-light" href="#androidProjects">Android</a>
         <a class="btn btn-outline-light" href="#iosProjects">iOS</a>
         <br>
-        <a href="https://github.com/kagen47" target="_blank">
+        <a class="socialLink" href="https://github.com/kagen47" target="_blank">
           <i class="fab fa-github"></i>
         </a>
         <!-- <i class="fab fa-github-square"></i> -->
-        <a href="https://github.com/kagen47" target="_blank">
+        <a class="socialLink" href="https://www.linkedin.com/in/gene-nakagaki/" target="_blank">
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
     </div>
-    <!-- <div class="overlay">
-      <div class="text">
-        <h1>Hi I'm Gene!</h1>
-        <p>I make apps :D</p>
-        <a href="#webProjects">Web</a>
-        <a href="#androidProjects">Android</a>
-        <a href="#iosProjects">iOS</a>
-      </div>
-    </div> -->
   </section>
 
   <section id="projects">
@@ -65,7 +58,7 @@
               <span>&times;</span>
             </button>
             <div class="card-img-top" style="background-image: url(./img/@imgThumb)">
-              <div class="overlay">
+              <div class="overlay hidden">
                 <div class="carousel">@imgs</div>
               </div>
             </div>
@@ -240,7 +233,7 @@
             duration: 300,
             complete: function (anim) {
               $activeCard.find('.carousel').slick('setPosition');
-              $activeCard.find('.overlay').addClass('show');
+              $activeCard.find('.overlay').removeClass('hidden');
             }
           });
           activeCardImgAnime.play();
@@ -259,7 +252,7 @@
               $activeCard.css('height', 'auto');
 
               // carousel
-              $activeCard.find('.overlay').removeClass('show');
+              $activeCard.find('.overlay').addClass('hidden');
 
               $activeCard.removeClass('active');
               $(document.documentElement).css('overflow-y', 'scroll');

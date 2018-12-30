@@ -1,0 +1,13 @@
+$heading-font: 'Averia Sans Libre',
+Arial,
+Helvetica;
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+@mixin transition($property) {
+    -webkit-transition: $property;
+    transition: $property;
+}
