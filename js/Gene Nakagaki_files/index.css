@@ -1,0 +1,279 @@
+body {
+    height: 2000px;
+    background-color: #e5e5e5;
+}
+
+img {
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+h1, h2, h3, h4  {
+    font-family: 'Averia Sans Libre';
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/*#########
+   #intro
+#########*/
+
+#intro {
+    height: 70vh;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    background-color:transparent;
+}
+
+#intro .overlay {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+#intro .overlay .text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-family: 'Averia Sans Libre';
+    font-size: 26px;
+}
+
+
+#intro .overlay .text h1 {
+    font-size: 100px;
+    font-family: 'Averia Sans Libre';
+    font-style: italic;
+}
+
+#intro .overlay.texts h1 {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+}
+
+#intro .overlay.yt {
+    background-color: transparent;
+    opacity: 0.5;
+    z-index: 100;
+}
+
+/*#########
+   .card
+#########*/
+
+.card {
+    /* Safari */
+    -webkit-transition: box-shadow .2s;
+    transition: box-shadow .2s;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 1), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    margin-bottom: 10px;
+}
+
+.card>* {
+    pointer-events: none;
+}
+
+.card:hover {
+    box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 1), 0 1px 6px 0 rgba(0, 0, 0, .14), 0 1px 8px 0 rgba(0, 0, 0, .12);
+    cursor: pointer;
+}
+
+.card-img-top {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 33.33% 0;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+.card.active .card-title {
+    margin-bottom: .75rem;
+}
+
+.card-subtitle {
+    display: none;
+}
+
+.card.active .card-subtitle {
+    display: block;
+}
+
+.card-body {
+    height: 50%;
+}
+
+.card.active .card-body {
+    overflow-y: scroll;
+}
+
+.card-body .details {
+    display: none;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.card-body .details .technology {
+    margin-bottom: 20px;
+}
+
+.card.active .card-body .details {
+    display: flex;
+}
+
+.card-body .card-hidden {
+    display: none;
+}
+
+.card.active .card-body .card-hidden {
+    display: inline-block;
+}
+
+/*################
+   .card.active
+################*/
+
+.card.active {
+    position: fixed;
+    z-index: 10;
+    box-shadow: 0 2px 26px -1px rgba(0, 0, 0, 1), 0 1px 26px 0 rgba(0, 0, 0, .14), 0 1px 28px 0 rgba(0, 0, 0, .12);
+}
+
+.card.active>* {
+    pointer-events: auto;
+}
+
+.card.active:hover {
+    cursor: unset;
+}
+
+/*################
+   .card .close
+################*/
+
+.card .close {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    right: 0;
+    background-color: black;
+    padding: 0 0 20px 20px;
+    opacity: 0.6;
+    border-radius: 0 0 0 100px;
+}
+
+.card .close span {
+    position: relative;
+    top: -5px;
+    font-size: 40px;
+    color: white;
+    pointer-events: none;
+}
+
+#projects .card .close:hover {
+    color: white;
+    opacity: 1;
+}
+
+.card.active .close {
+    display: block;
+}
+
+/*#################
+   slick carousel
+#################*/
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel,
+.slick-list,
+.slick-track {
+    height: 100%;
+}
+
+.slick-slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel .slick-slide img {
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 0.5;
+    /* IE 9 */
+    -ms-transform: scale(0.6, 0.6);
+    /* Safari */
+    -webkit-transform: scale(0.6, 0.6);
+    transform: scale(0.6, 0.6);
+    transition: all 0.3s;
+}
+
+.carousel .slick-center.slick-slide img {
+    opacity: 1;
+    /* IE 9 */
+    -ms-transform: scale(1, 1);
+    /* Safari */
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+.carousel .slick-dots li button {
+    background-color: #999;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.carousel .slick-dots .slick-active button {
+    background-color: black;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.overlay.show {
+    opacity: 1;
+}
+
+.overlay .text {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: white;
+    text-align: center;
+}
+
+.clear {
+    clear: both;
+}

@@ -17,21 +17,48 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
     crossorigin="anonymous">
 
+  <link href="https://fonts.googleapis.com/css?family=Arsenal|Averia+Sans+Libre" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css" />
   <title>Gene Nakagaki</title>
+
+
 </head>
 
 <body>
   <section id="intro">
-    <!-- <h1>Gene Nakagaki</h1> -->
-
+    <div class="overlay">
+      <div class="text">
+        <h1>Hi, I'm Gene!</h1>
+        <p>I develop apps :D</p>
+        <a class="btn btn-outline-light" href="#linkWeb">Web</a>
+        <a class="btn btn-outline-light" href="#androidProjects">Android</a>
+        <a class="btn btn-outline-light" href="#iosProjects">iOS</a>
+        <br>
+        <a href="https://github.com/kagen47" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <!-- <i class="fab fa-github-square"></i> -->
+        <a href="https://github.com/kagen47" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+    <!-- <div class="overlay">
+      <div class="text">
+        <h1>Hi I'm Gene!</h1>
+        <p>I make apps :D</p>
+        <a href="#webProjects">Web</a>
+        <a href="#androidProjects">Android</a>
+        <a href="#iosProjects">iOS</a>
+      </div>
+    </div> -->
   </section>
 
   <section id="projects">
     <div class="container">
-      <h2>Web Apps</h2>
-      <div class="row">
 
+      <h2 id="linkWeb">Web Apps</h2>
+      <div id="webProjects" class="row">
         <div class="col-sm-6 col-lg-4">
           <div class="card">
             <button type="button" class="close">
@@ -44,7 +71,6 @@
             </div>
 
             <div class="card-body">
-
               <h5 class="card-title">@title</h5>
               <p class="card-subtitle text-muted">@subtitle</p>
               <div class="row details">
@@ -54,18 +80,21 @@
 
                   @buttons
                 </div>
-
                 <div class="col-sm-8">
                   <p>@description</p>
                   <ul>@details</ul>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-
       </div>
+
+      <h2>Android Apps</h2>
+      <div id="androidProjects" class="row"></div>
+
+      <h2>iOS Apps</h2>
+      <div id="iosProjects" class="row"></div>
     </div>
   </section>
 
@@ -82,16 +111,17 @@
   <script type="text/javascript" src="./js/slick.min.js"></script>
 
   <script src="./js/anime.min.js"></script>
+  <script src="./js/blazy.min.js"></script>
 
   <script src="./js/web-projects.js"></script>
 
   <script>
-    var template = $('#projects > .container > .row').html();
+    var template = $('#webProjects').html();
     var projectsHtml = "";
-    
+
     for (var i = 0; i < webProjects.length; i++) {
       var p = webProjects[i];
-      
+
       // Image carousel
       var imgs = "";
       for (var j = 0; j < p.imgs.length; j++) {
@@ -101,7 +131,7 @@
       // Technologies list
       var technologies = "";
       for (var j = 0; j < p.technologies.length; j++) {
-        technologies += "<li>"+ p.technologies[j] +"</li>"
+        technologies += "<li>" + p.technologies[j] + "</li>"
       }
 
       // Details list
@@ -119,29 +149,30 @@
         .replace("@description", p.description)
         .replace("@details", details);
     }
-    $('#projects > .container > .row').html(projectsHtml);
+    $('#webProjects').html(projectsHtml);
 
     // image carousel
     $('.carousel').slick({
       centerMode: true,
       centerPadding: '25%',
+      dots: true,
       slidesToShow: 1,
       responsive: [{
-          breakpoint: 1100,
-          settings: {
-            centerMode: true,
-            centerPadding: '0',
-            slidesToShow: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            centerMode: true,
-            centerPadding: '0',
-            slidesToShow: 1
-          }
+        breakpoint: 1100,
+        settings: {
+          centerMode: true,
+          centerPadding: '0',
+          slidesToShow: 1
         }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          centerMode: true,
+          centerPadding: '0',
+          slidesToShow: 1
+        }
+      }
       ]
     });
 
@@ -190,15 +221,15 @@
             height: height,
             duration: 300,
             easing: 'easeOutQuad',
-            complete: function(anim) {
+            complete: function (anim) {
               $activeCard.css('width', '100%');
             }
           });
           activeCardAnime.play();
-          
+
           // Animate for image container
           var imageHeight = height / 2;
-          if (width < imageHeight * 3/2) {
+          if (width < imageHeight * 3 / 2) {
             // if height is too small
             imageHeight = width * 2 / 3;
           }

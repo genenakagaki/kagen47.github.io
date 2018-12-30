@@ -11,6 +11,77 @@ img {
     user-select: none;
 }
 
+h1, h2, h3, h4  {
+    font-family: 'Averia Sans Libre';
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/*#########
+   #intro
+#########*/
+
+#intro {
+    height: 70vh;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    background-color:transparent;
+}
+
+#intro .overlay {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+#intro .overlay .text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-family: 'Averia Sans Libre';
+    font-size: 26px;
+}
+
+
+#intro .overlay .text h1 {
+    font-size: 100px;
+    font-family: 'Averia Sans Libre';
+    font-style: italic;
+}
+
+#intro .btn {
+    padding: 2px 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#intro .fab {
+    margin-top: 15px;
+    font-size: 38px;
+    color: white;
+}
+
+#intro a:hover{
+    text-decoration: none;
+}
+
+#intro .overlay.texts h1 {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+}
+
+#intro .overlay.yt {
+    background-color: transparent;
+    opacity: 0.5;
+    z-index: 100;
+}
+
 /*#########
    .card
 #########*/
@@ -39,6 +110,22 @@ img {
     background-repeat: no-repeat;
     background-position: center center;
     padding: 33.33% 0;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+.card.active .card-title {
+    margin-bottom: .75rem;
+}
+
+.card-subtitle {
+    display: none;
+}
+
+.card.active .card-subtitle {
+    display: block;
 }
 
 .card-body {
@@ -169,6 +256,16 @@ img {
     /* Safari */
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
+}
+
+.carousel .slick-dots li button {
+    background-color: #999;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.carousel .slick-dots .slick-active button {
+    background-color: black;
 }
 
 .overlay {

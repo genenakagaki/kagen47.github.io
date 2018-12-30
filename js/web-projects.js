@@ -2,6 +2,7 @@ var webProjects = [{
     "title": "sumitomo-ny.com",
     "subtitle": "Real Estate Web App - October 2018",
     "imgs": [
+        "sumitomo-devices.jpg",
         "sumitomo-1.jpg",
         "sumitomo-2.jpg",
         "sumitomo-3.jpg",
@@ -9,6 +10,7 @@ var webProjects = [{
         "sumitomo-5.jpg"
     ],
     "technologies": [
+        "C#",
         "ASP.NET MVC 5",
         "Entity Framework",
         "SQL Server",
@@ -40,6 +42,7 @@ var webProjects = [{
         "sumitomo-cms-3.jpg"
     ],
     "technologies": [
+        "C#",
         "ASP.NET MVC 5",
         "Entity Framework",
         "SQL Server",
@@ -94,6 +97,7 @@ var webProjects = [{
         "redac-3.jpg"
     ],
     "technologies": [
+        "C#",
         "ASP.NET Web Forms",
         "SQL Server",
         "Entity Framework",
@@ -116,12 +120,14 @@ var webProjects = [{
     "title": "yt-design.com",
     "subtitle": "Design Showcase Web App - January 2017",
     "imgs": [
+        "yt-devices.jpg",
         "yt-1.jpg",
         "yt-2.jpg",
         "yt-3.jpg",
         "yt-4.jpg"
     ],
     "technologies": [
+        "C#",
         "ASP.NET Web Forms",
         "SQL Server",
         "Entity Framework",
@@ -149,6 +155,7 @@ var webProjects = [{
         "yt-cms-3.jpg"
     ],
     "technologies": [
+        "C#",
         "ASP.NET Web Forms",
         "SQL Server",
         "Entity Framework",
