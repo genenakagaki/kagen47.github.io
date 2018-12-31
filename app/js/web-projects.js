@@ -1,6 +1,7 @@
 var webProjects = [{
     "title": "sumitomo-ny.com",
     "subtitle": "Real Estate Web App - October 2018",
+    "thumb": "sumitomo-devices.jpg",
     "imgs": [
         "sumitomo-devices.jpg",
         "sumitomo-1.jpg",
@@ -36,6 +37,7 @@ var webProjects = [{
 {
     "title": "CMS for sumitomo-ny.com",
     "subtitle": "CMS Web App - October 2018",
+    "thumb": "sumitomo-cms-1.jpg",
     "imgs": [
         "sumitomo-cms-1.jpg",
         "sumitomo-cms-2.jpg",
@@ -64,6 +66,7 @@ var webProjects = [{
 {
     "title": "care.onkyousa.com",
     "subtitle": "Customer Support Web App - March 2018",
+    "thumb": "onkyo-1.jpg",
     "imgs": [
         "onkyo-1.jpg",
         "onkyo-2.jpg",
@@ -91,6 +94,7 @@ var webProjects = [{
 {
     "title": "redacinc.com",
     "subtitle": "Real Estate Web App - February 2018",
+    "thumb": "redac-1.jpg",
     "imgs": [
         "redac-1.jpg",
         "redac-2.jpg",
@@ -119,6 +123,7 @@ var webProjects = [{
 {
     "title": "yt-design.com",
     "subtitle": "Design Showcase Web App - January 2017",
+    "thumb": "yt-devices.jpg",
     "imgs": [
         "yt-devices.jpg",
         "yt-1.jpg",
@@ -149,6 +154,7 @@ var webProjects = [{
 {
     "title": "CMS for yt-design.com",
     "subtitle": "CMS Web App - January 2017",
+    "thumb": "yt-cms-1.jpg",
     "imgs": [
         "yt-cms-1.jpg",
         "yt-cms-2.jpg",

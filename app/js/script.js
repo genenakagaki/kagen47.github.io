@@ -1,37 +1,60 @@
+
+anime({
+    targets: '#yagi',
+    top: '300px',
+    direction: 'alternate',
+    duration: 300,
+    easing: 'easeInExpo',
+    loop: true
+});
+
+// Create project cards
 var template = $('#webProjects').html();
-var projectsHtml = "";
 
-for (var i = 0; i < webProjects.length; i++) {
-    var p = webProjects[i];
+// Create cards for web apps
+var projectsHtml;
 
-    // Image carousel
-    var imgs = "";
-    for (var j = 0; j < p.imgs.length; j++) {
-        imgs += "<div><img class='img-fluid' src='./img/" + p.imgs[j] + "'></div>";
+$('#webProjects').html(createProjectCards(webProjects));
+$('#androidProjects').html(createProjectCards(androidProjects));
+$('#iosProjects').html(createProjectCards(iosProjects));
+
+function createProjectCards(projectJson) {
+    var result = "";
+
+    for (var i = 0; i < projectJson.length; i++) {
+        var p = projectJson[i];
+
+        // Image carousel
+        var imgs = "";
+        for (var j = 0; j < p.imgs.length; j++) {
+            imgs += "<div><img class='img-fluid' src='./img/" + p.imgs[j] + "'></div>";
+        }
+
+        // Technologies list
+        var technologies = "";
+        for (var j = 0; j < p.technologies.length; j++) {
+            technologies += "<li>" + p.technologies[j] + "</li>"
+        }
+
+        // Details list
+        var details = "";
+        for (var j = 0; j < p.details.length; j++) {
+            details += "<li>" + p.details[j] + "</li>";
+        }
+
+        result += template.replace("@title", p.title)
+            .replace("@subtitle", p.subtitle)
+            .replace("@imgThumb", p.thumb)
+            .replace("@imgs", imgs)
+            .replace("@technologies", technologies)
+            .replace("@buttons", p.buttons)
+            .replace("@description", p.description)
+            .replace("@details", details);
     }
 
-    // Technologies list
-    var technologies = "";
-    for (var j = 0; j < p.technologies.length; j++) {
-        technologies += "<li>" + p.technologies[j] + "</li>"
-    }
-
-    // Details list
-    var details = "";
-    for (var j = 0; j < p.details.length; j++) {
-        details += "<li>" + p.details[j] + "</li>";
-    }
-
-    projectsHtml += template.replace("@title", p.title)
-        .replace("@subtitle", p.subtitle)
-        .replace("@imgThumb", p.imgs[0])
-        .replace("@imgs", imgs)
-        .replace("@technologies", technologies)
-        .replace("@buttons", p.buttons)
-        .replace("@description", p.description)
-        .replace("@details", details);
+    return result;
 }
-$('#webProjects').html(projectsHtml);
+
 
 // image carousel
 $('.carousel').slick({

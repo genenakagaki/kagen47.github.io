@@ -1,33 +1,34 @@
-var webProjects = [{
+var iosProjects = [{
     "title": "Spotphotos",
     "subtitle": "Photo Viewer iOS App - Dec 2015",
+    "thumb": "spotphotos.jpg",
     "imgs": [
-        "sumitomo-1.jpg",
-        "sumitomo-2.jpg",
-        "sumitomo-3.jpg",
-        "sumitomo-4.jpg",
-        "sumitomo-5.jpg"
+        "spotphotos.jpg"
     ],
     "technologies": [
-        "ASP.NET MVC 5",
-        "Entity Framework",
-        "SQL Server",
-        "Javascript, HTML5, CSS3",
-        "jQuery",
-        "Bootstrap",
-        "Google Maps Javascript API",
+        "Objective-C",
         "Git"
     ],
     "buttons": [
-        "<a class='btn btn-outline-primary' href='https://www.sumitomo-ny.com' target='_blank'><i class='fas fa-external-link-alt'></i> VIEW SITE</a>"
     ],
-    "description": "A responsive, multilingual real estate web application which users can search for the listings that they want using the filters and the custom map. There are also a lot of resources for the users like area guides, a guide for buying a property, and the guide for different styles of properties.",
+    "description": "iOS application that displays photos from the most popular photo locations on Flickr. Compatible with both iPad and iPhone. Project from iOS programming class at Lehman College.",
     "details": [
-        "Designed the SQL Server Database to store data for Listings and Agents.",
-        "Created a C# Library that imports data from Multiple Listing Service (MLS), maps it to the database entity object, and then stores it to the database using the Entity Framework.",
-        "Created responsive web app using ASP.NET MVC 5 for the backend, Bootstrap and jQuery for the front-end.",
-        "Created dynamic pages that gets data from the database asynchronously using jQuery.",
-        "Created custom map using Google Maps Javascript API",
-        "Added support for other languages using cookies"
+    ]
+},
+{
+    "title": "Flipismo",
+    "subtitle": "Card Game iOS App - November 2015",
+    "thumb": "flipismo.jpg",
+    "imgs": [
+        "flipismo.jpg"
+    ],
+    "technologies": [
+        "Objective-C",
+        "Git"
+    ],
+    "buttons": [
+    ],
+    "description": "iOS application of a card matching game. Project from iOS programming class at Lehman College.",
+    "details": [
     ]
 }]
