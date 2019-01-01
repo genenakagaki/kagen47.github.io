@@ -1,5 +1,5 @@
 var webProjects = [{
-    "title": "sumitomo-ny.com",
+    "title": "sumitomo-ny.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International</a></span>",
     "subtitle": "Real Estate Web App - October 2018",
     "thumb": "sumitomo-devices.jpg",
     "imgs": [
@@ -31,40 +31,15 @@ var webProjects = [{
         "Created responsive web app using ASP.NET MVC 5 for the backend, Bootstrap and jQuery for the front-end.",
         "Created dynamic pages that gets data from the database asynchronously using jQuery.",
         "Created custom map using Google Maps Javascript API",
-        "Added support for other languages using cookies"
+        "Added support for other languages using cookies",
+        "(CMS) Created a CMS for the company news articles.",
+        "(CMS) Designed the SQL Server Database to store data for news articles.",
+        "(CMS) Created a web app that can read and write from the database using ASP.NET MVC 5 for the backend, Bootstrap and jQuery for the front-end.",
+        "(CMS) Used a content editor Javascript library to allow basic text decoration and positioning, and also adding images."
     ]
 },
 {
-    "title": "CMS for sumitomo-ny.com",
-    "subtitle": "CMS Web App - October 2018",
-    "thumb": "sumitomo-cms-1.jpg",
-    "imgs": [
-        "sumitomo-cms-1.jpg",
-        "sumitomo-cms-2.jpg",
-        "sumitomo-cms-3.jpg"
-    ],
-    "technologies": [
-        "C#",
-        "ASP.NET MVC 5",
-        "Entity Framework",
-        "SQL Server",
-        "Javascript, HTML5, CSS3",
-        "jQuery",
-        "Bootstrap",
-        "Git"
-    ],
-    "buttons": [
-        "<a class='btn btn-outline-primary' href='https://www.sumitomo-ny.com' target='_blank'><i class='fas fa-external-link-alt'></i> VIEW SITE</a>"
-    ],
-    "description": "A CMS of news articles for the Sumitomo NY Real Estate Sales web app. The news article added to the CMS is shown on the Real Estate web app.",
-    "details": [
-        "Designed the SQL Server Database to store data for news articles.",
-        "Created a web app that can read and write from the database using ASP.NET MVC 5 for the backend, Bootstrap and jQuery for the front-end.",
-        "Used a content editor Javascript library to allow basic text decoration and positioning, and also adding images."
-    ]
-},
-{
-    "title": "care.onkyousa.com",
+    "title": "care.onkyousa.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International</a></span>",
     "subtitle": "Customer Support Web App - March 2018",
     "thumb": "onkyo-1.jpg",
     "imgs": [
@@ -92,7 +67,7 @@ var webProjects = [{
     ]
 },
 {
-    "title": "redacinc.com",
+    "title": "redacinc.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International</a></span>",
     "subtitle": "Real Estate Web App - February 2018",
     "thumb": "redac-1.jpg",
     "imgs": [
@@ -121,7 +96,7 @@ var webProjects = [{
     ]
 },
 {
-    "title": "yt-design.com",
+    "title": "yt-design.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International</a></span>",
     "subtitle": "Design Showcase Web App - January 2017",
     "thumb": "yt-devices.jpg",
     "imgs": [
@@ -148,35 +123,11 @@ var webProjects = [{
     "details": [
         "Designed the SQL Server database to store the company news information",
         "Created a responsive web app using the ASP.NET Web Forms for the backend, Bootstrap and jQuery for the front-end.",
-        "Displayed images using asynchronous calls to prevent website stall."
-    ]
-},
-{
-    "title": "CMS for yt-design.com",
-    "subtitle": "CMS Web App - January 2017",
-    "thumb": "yt-cms-1.jpg",
-    "imgs": [
-        "yt-cms-1.jpg",
-        "yt-cms-2.jpg",
-        "yt-cms-3.jpg"
-    ],
-    "technologies": [
-        "C#",
-        "ASP.NET Web Forms",
-        "SQL Server",
-        "Entity Framework",
-        "Javascript, HTML5, CSS3",
-        "jQuery",
-        "Bootstrap",
-        "Team Foundation Server"
-    ],
-    "buttons": [
-    ],
-    "description": "A CMS web app for managing the projects in the website yt-design.com. Users can add new projects and select images to be shown on the website.",
-    "details": [
-        "Designed the SQL Server database to store the project data.",
-        "Created the web app using the ASP.NET Web Forms for the backend, Bootstrap and jQuery for the front-end.",
-        "Used jQueryUI to allow rearranging of the images and the projects."
+        "Displayed images using asynchronous calls to prevent website stall.",
+        "(CMS) Created a CMS for the projects.",
+        "(CMS) Designed the SQL Server database to store the project data.",
+        "(CMS) Created the web app using the ASP.NET Web Forms for the backend, Bootstrap and jQuery for the front-end.",
+        "(CMS) Used jQueryUI to allow rearranging of the images and the projects."
     ]
 }
 ]

@@ -60,6 +60,11 @@ h2 {
     }
     .card-title {
         margin-bottom: 0;
+        span {
+            display: none;
+            color: #6c757d;
+            font-size: 16px;
+        }
     }
     .card-subtitle {
         display: none;
@@ -112,6 +117,9 @@ h2 {
     }
     .card-title {
         margin-bottom: .75rem;
+        span {
+            display: inline;
+        }
     }
     .card-subtitle {
         display: block;

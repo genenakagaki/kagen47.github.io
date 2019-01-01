@@ -47,6 +47,10 @@ h2 {
     padding: 33.33% 0; }
   .card .card-title {
     margin-bottom: 0; }
+    .card .card-title span {
+      display: none;
+      color: #6c757d;
+      font-size: 16px; }
   .card .card-subtitle {
     display: none; }
   .card .card-body {
@@ -88,6 +92,8 @@ h2 {
     cursor: unset; }
   .card.active .card-title {
     margin-bottom: .75rem; }
+    .card.active .card-title span {
+      display: inline; }
   .card.active .card-subtitle {
     display: block; }
   .card.active .card-body {
