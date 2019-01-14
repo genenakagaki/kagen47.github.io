@@ -1,12 +1,12 @@
 
-anime({
-    targets: '#yagi',
-    top: '300px',
-    direction: 'alternate',
-    duration: 300,
-    easing: 'easeInExpo',
-    loop: true
-});
+// anime({
+//     targets: '#yagi',
+//     top: '300px',
+//     direction: 'alternate',
+//     duration: 300,
+//     easing: 'easeInExpo',
+//     loop: true
+// });
 
 // Create project cards
 var template = $('#webProjects').html();

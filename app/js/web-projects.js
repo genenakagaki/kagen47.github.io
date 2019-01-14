@@ -1,5 +1,5 @@
 var webProjects = [{
-    "title": "sumitomo-ny.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International</a></span>",
+    "title": "sumitomo-ny.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International Inc.</a></span>",
     "subtitle": "Real Estate Web App - October 2018",
     "thumb": "sumitomo-devices.jpg",
     "imgs": [
@@ -39,7 +39,7 @@ var webProjects = [{
     ]
 },
 {
-    "title": "care.onkyousa.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International</a></span>",
+    "title": "care.onkyousa.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International Inc.</a></span>",
     "subtitle": "Customer Support Web App - March 2018",
     "thumb": "onkyo-1.jpg",
     "imgs": [
@@ -67,7 +67,7 @@ var webProjects = [{
     ]
 },
 {
-    "title": "redacinc.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International</a></span>",
+    "title": "redacinc.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International Inc.</a></span>",
     "subtitle": "Real Estate Web App - February 2018",
     "thumb": "redac-1.jpg",
     "imgs": [
@@ -96,7 +96,7 @@ var webProjects = [{
     ]
 },
 {
-    "title": "yt-design.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International</a></span>",
+    "title": "yt-design.com<span> - Developed at <a href='http://www.multinet-usa.com/' target='_blank'>MultiNet International Inc.</a></span>",
     "subtitle": "Design Showcase Web App - January 2017",
     "thumb": "yt-devices.jpg",
     "imgs": [
